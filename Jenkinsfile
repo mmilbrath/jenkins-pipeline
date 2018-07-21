@@ -2,8 +2,17 @@ pipeline {
   agent none
   stages {
     stage('sync') {
-      steps {
-        echo 'sync source'
+      parallel {
+        stage('sync') {
+          steps {
+            echo 'sync source'
+          }
+        }
+        stage('sync2') {
+          steps {
+            echo 'sync2'
+          }
+        }
       }
     }
     stage('build') {
