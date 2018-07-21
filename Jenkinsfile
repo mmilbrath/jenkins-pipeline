@@ -13,6 +13,11 @@ pipeline {
             echo 'sync2'
           }
         }
+        stage('') {
+          steps {
+            sh 'echo "HI"'
+          }
+        }
       }
     }
     stage('build') {
